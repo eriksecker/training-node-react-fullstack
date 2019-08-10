@@ -4,10 +4,19 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
 	render() {
+		const {
+			auth,
+		} = this.props;
+
 		return (
 			<nav>
 				<div className="nav-wrapper">
-					<Link to="/" className="left brand-logo">Logo</Link>
+					<Link
+						to={ auth ? '/surveys' : '/' }
+						className="left brand-logo"
+					>
+						Logo
+					</Link>
 					<ul id="nav-mobile" className="right">
 						{ this.renderContent() }
 					</ul>
